@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#0A1628">
+
+    <!-- ═══════════════════════════════════════════════
+         GRID DE DATOS GPS — 2 columnas × 3 filas
+         ═══════════════════════════════════════════════ -->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="3"
+        android:padding="1dp">
+
+        <!-- Fila 1 -->
+        <com.sechuranavigator.app.ui.DataCell
+            android:id="@+id/cellLatitude"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_margin="1dp" />
+
+        <com.sechuranavigator.app.ui.DataCell
+            android:id="@+id/cellLongitude"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_margin="1dp" />
+
+        <!-- Fila 2 -->
+        <com.sechuranavigator.app.ui.DataCell
+            android:id="@+id/cellAccuracy"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_margin="1dp" />
+
+        <com.sechuranavigator.app.ui.DataCell
+            android:id="@+id/cellSatellites"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_margin="1dp" />
+
+        <!-- Fila 3 -->
+        <com.sechuranavigator.app.ui.DataCell
+            android:id="@+id/cellAltitude"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_margin="1dp" />
+
+        <com.sechuranavigator.app.ui.DataCell
+            android:id="@+id/cellBearing"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_margin="1dp" />
+
+    </GridLayout>
+
+    <!-- ═══════════════════════════════════════════════
+         BRÚJULA ANIMADA
+         ═══════════════════════════════════════════════ -->
+    <com.sechuranavigator.app.ui.CompassView
+        android:id="@+id/compassView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp" />
+
+    <!-- ═══════════════════════════════════════════════
+         DATOS DE MAREA — 3 celdas en fila
+         ═══════════════════════════════════════════════ -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.sechuranavigator.app.ui.DataCell
+            android:id="@+id/cellTideStatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="1dp" />
+
+        <com.sechuranavigator.app.ui.DataCell
+            android:id="@+id/cellTideHeight"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="1dp" />
+
+        <com.sechuranavigator.app.ui.DataCell
+            android:id="@+id/cellTideNext"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="1dp" />
+
+    </LinearLayout>
+
+    <!-- ═══════════════════════════════════════════════
+         BOTONES DE NAVEGACIÓN — 2 filas × 3 columnas
+         ═══════════════════════════════════════════════ -->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:columnCount="3"
+        android:rowCount="2"
+        android:padding="8dp">
+
+        <com.sechuranavigator.app.ui.NavButton
+            android:id="@+id/btnMap"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"/>
+
+        <com.sechuranavigator.app.ui.NavButton
+            android:id="@+id/btnNewWaypoint"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"/>
+
+        <com.sechuranavigator.app.ui.NavButton
+            android:id="@+id/btnMyPoints"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"/>
+
+        <com.sechuranavigator.app.ui.NavButton
+            android:id="@+id/btnRoutes"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"/>
+
+        <com.sechuranavigator.app.ui.NavButton
+            android:id="@+id/btnTides"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"/>
+
+        <com.sechuranavigator.app.ui.NavButton
+            android:id="@+id/btnSettings"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"/>
+
+    </GridLayout>
+
+    <!-- Banner recordatorio de crear cuenta -->
+    <!-- Por defecto oculto (visibility="gone") -->
+    <!-- Solo aparece en modo local cuando hay internet, 1 vez por día -->
+    <LinearLayout
+        android:id="@+id/bannerCreateAccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#1A3B82F6"
+        android:padding="10dp"
+        android:gravity="center_vertical"
+        android:visibility="gone">
+
+        <!-- Texto del banner -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="💾 Crea una cuenta gratis para no perder tus puntos"
+            android:textColor="#93C5FD"
+            android:textSize="11sp"/>
+
+        <!-- Botón "Crear" -->
+        <TextView
+            android:id="@+id/btnBannerCreateAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Crear"
+            android:textColor="#FFFFFF"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:background="#3B82F6"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:layout_marginStart="8dp"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <!-- Botón cerrar "✕" -->
+        <TextView
+            android:id="@+id/btnBannerDismiss"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  ✕"
+            android:textColor="#93C5FD"
+            android:textSize="14sp"
+            android:padding="8dp"
+            android:clickable="true"
+            android:focusable="true"/>
+
+    </LinearLayout>
+
+</LinearLayout>

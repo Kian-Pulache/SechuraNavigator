@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "370075012320",
+    "project_id": "sechuranavigator",
+    "storage_bucket": "sechuranavigator.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:370075012320:android:ef3496e4323459b1285485",
+        "android_client_info": {
+          "package_name": "com.sechuranavigator.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEXS357CjADtntdywz7MCq5hhpFTxW_gA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

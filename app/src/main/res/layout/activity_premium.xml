@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0A1628">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Encabezado -->
+        <TextView
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="← Volver"
+            android:textColor="#9CA3AF"
+            android:textSize="13sp"
+            android:padding="4dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="⭐ Sechura Navigator Pro"
+            android:textColor="#FBBF24"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Para el pescador profesional"
+            android:textColor="#6B7280"
+            android:textSize="13sp"
+            android:gravity="center"
+            android:layout_marginBottom="28dp"/>
+
+        <!-- Lista de beneficios -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#0D1F3C"
+            android:padding="16dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="INCLUYE EN EL PLAN PRO"
+                android:textColor="#4B5563"
+                android:textSize="10sp"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Beneficios — agregar uno por uno -->
+            <TextView android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="✓  Waypoints ilimitados en la nube"
+                android:textColor="#E5E7EB" android:textSize="13sp"
+                android:layout_marginBottom="8dp"/>
+            <TextView android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="✓  Rutas ilimitadas guardadas"
+                android:textColor="#E5E7EB" android:textSize="13sp"
+                android:layout_marginBottom="8dp"/>
+            <TextView android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="✓  Ruta del día con IA"
+                android:textColor="#E5E7EB" android:textSize="13sp"
+                android:layout_marginBottom="8dp"/>
+            <TextView android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="✓  Tabla solunar (mejores horas de pesca)"
+                android:textColor="#E5E7EB" android:textSize="13sp"
+                android:layout_marginBottom="8dp"/>
+            <TextView android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="✓  Tabla de descompresión para buzos"
+                android:textColor="#E5E7EB" android:textSize="13sp"
+                android:layout_marginBottom="8dp"/>
+            <TextView android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="✓  Estadísticas de producción (Excel)"
+                android:textColor="#E5E7EB" android:textSize="13sp"
+                android:layout_marginBottom="4dp"/>
+
+        </LinearLayout>
+
+        <!-- Opción mensual -->
+        <LinearLayout
+            android:id="@+id/cardMonthly"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#0D1F3C"
+            android:padding="16dp"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="10dp"
+            android:clickable="true"
+            android:focusable="true">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Plan mensual"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cancela cuando quieras"
+                    android:textColor="#6B7280"
+                    android:textSize="11sp"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvPriceMonthly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="S/ 5.00/mes"
+                android:textColor="#FBBF24"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <!-- Opción anual (recomendada) -->
+        <LinearLayout
+            android:id="@+id/cardYearly"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#1AF59E0B"
+            android:padding="16dp"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="6dp"
+            android:clickable="true"
+            android:focusable="true">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Plan anual"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_marginEnd="8dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="AHORRA 25%"
+                        android:textColor="#0A1628"
+                        android:textSize="9sp"
+                        android:textStyle="bold"
+                        android:background="#FBBF24"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="5dp"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"/>
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Equivale a S/ 3.75/mes"
+                    android:textColor="#9CA3AF"
+                    android:textSize="11sp"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvPriceYearly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="S/ 45.00/año"
+                android:textColor="#FBBF24"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <!-- Nota de pago -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="El pago se procesa de forma segura a través de Google Play.\nPuedes cancelar en cualquier momento desde Google Play → Suscripciones."
+            android:textColor="#4B5563"
+            android:textSize="10sp"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Botón continuar gratis -->
+        <TextView
+            android:id="@+id/btnContinueFree"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Continuar con el plan gratuito"
+            android:textColor="#4B5563"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:padding="12dp"
+            android:clickable="true"
+            android:focusable="true"/>
+
+    </LinearLayout>
+</ScrollView>

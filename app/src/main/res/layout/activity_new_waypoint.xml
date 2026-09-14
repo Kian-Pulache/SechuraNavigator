@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#0A1628">
+
+    <!-- Barra superior -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#060E1C"
+        android:padding="12dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="← Cancelar"
+            android:textColor="#9CA3AF"
+            android:textSize="13sp"
+            android:padding="8dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Nuevo waypoint"
+            android:textColor="#FBBF24"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Guardar"
+            android:textColor="#10B981"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:padding="8dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Datos GPS actuales -->
+            <LinearLayout
+                android:id="@+id/cardGps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#0D1F3C"
+                android:padding="12dp"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:id="@+id/tvGpsCoords"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Obteniendo posición..."
+                    android:textColor="#10B981"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/tvGpsAccuracy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Precisión: —"
+                    android:textColor="#6B7280"
+                    android:textSize="11sp"
+                    android:gravity="center"
+                    android:layout_marginTop="2dp" />
+
+            </LinearLayout>
+
+            <!-- Nombre del punto -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="NOMBRE (opcional)"
+                android:textColor="#6B7280"
+                android:textSize="10sp"
+                android:layout_marginBottom="4dp" />
+
+            <EditText
+                android:id="@+id/etName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#0D1F3C"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#4B5563"
+                android:hint="Ej: Peña norte, Zona concha..."
+                android:textSize="13sp"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp"
+                android:inputType="textCapSentences"
+                android:maxLines="1" />
+
+            <!-- Selector de especie -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ESPECIE"
+                android:textColor="#6B7280"
+                android:textSize="10sp"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Chips de especies — fila 1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="6dp">
+
+                <TextView
+                    android:id="@+id/chipConcha"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="🐚 Concha"
+                    android:textColor="#6B7280"
+                    android:textSize="11sp"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="#0D1F3C"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <TextView
+                    android:id="@+id/chipPulpo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="🐙 Pulpo"
+                    android:textColor="#6B7280"
+                    android:textSize="11sp"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="#0D1F3C"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <TextView
+                    android:id="@+id/chipPescado"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="🐟 Pescado"
+                    android:textColor="#6B7280"
+                    android:textSize="11sp"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:background="#0D1F3C"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+            </LinearLayout>
+
+            <!-- Chips de especies — fila 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="6dp">
+
+                <TextView
+                    android:id="@+id/chipLangosta"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="🦞 Langosta"
+                    android:textColor="#6B7280"
+                    android:textSize="11sp"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="#0D1F3C"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <TextView
+                    android:id="@+id/chipCaracol"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="🐌 Caracol"
+                    android:textColor="#6B7280"
+                    android:textSize="11sp"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="#0D1F3C"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <TextView
+                    android:id="@+id/chipOtro"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="+ Otro"
+                    android:textColor="#6B7280"
+                    android:textSize="11sp"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:background="#0D1F3C"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+            </LinearLayout>
+
+            <!-- Descripción opcional -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="COMENTARIOS (opcional)"
+                android:textColor="#6B7280"
+                android:textSize="10sp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="4dp" />
+
+            <EditText
+                android:id="@+id/etDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#0D1F3C"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#4B5563"
+                android:hint="Profundidad, condiciones, notas..."
+                android:textSize="13sp"
+                android:padding="12dp"
+                android:inputType="textMultiLine|textCapSentences"
+                android:minLines="2"
+                android:maxLines="4"
+                android:gravity="top" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Botón grande de guardar -->
+    <TextView
+        android:id="@+id/btnSaveBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="GUARDAR WAYPOINT"
+        android:textColor="#0A1628"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="16dp"
+        android:background="#10B981"
+        android:clickable="true"
+        android:focusable="true" />
+
+</LinearLayout>

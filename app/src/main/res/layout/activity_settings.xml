@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#0A1628">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#060E1C"
+        android:padding="12dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="← Volver"
+            android:textColor="#9CA3AF"
+            android:textSize="13sp"
+            android:padding="8dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Configuración"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="     " />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/item_settings_action"
+                android:id="@+id/itemPro" />
+
+            <!-- ══ GPS Y PRECISIÓN ══ -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="GPS Y PRECISIÓN"
+                android:textColor="#4B5563"
+                android:textSize="10sp"
+                android:padding="10dp"
+                android:background="#060E1C" />
+
+            <include layout="@layout/item_settings_spinner"
+                android:id="@+id/itemAccuracy" />
+            <include layout="@layout/item_settings_spinner"
+                android:id="@+id/itemReadings" />
+
+            <!-- ══ MOTOR DE VISITAS ══ -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="MOTOR DE VISITAS"
+                android:textColor="#4B5563"
+                android:textSize="10sp"
+                android:padding="10dp"
+                android:background="#060E1C" />
+
+            <include layout="@layout/item_settings_spinner"
+                android:id="@+id/itemArrivalRadius" />
+            <include layout="@layout/item_settings_spinner"
+                android:id="@+id/itemMinStay" />
+            <include layout="@layout/item_settings_toggle"
+                android:id="@+id/itemAskProduction" />
+
+            <!-- ══ UNIDADES ══ -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="UNIDADES Y COORDENADAS"
+                android:textColor="#4B5563"
+                android:textSize="10sp"
+                android:padding="10dp"
+                android:background="#060E1C" />
+
+            <include layout="@layout/item_settings_spinner"
+                android:id="@+id/itemCoordFormat" />
+            <include layout="@layout/item_settings_spinner"
+                android:id="@+id/itemDistanceUnit" />
+            <include layout="@layout/item_settings_spinner"
+                android:id="@+id/itemSpeedUnit" />
+
+            <!-- ══ WAYPOINTS ══ -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="WAYPOINTS"
+                android:textColor="#4B5563"
+                android:textSize="10sp"
+                android:padding="10dp"
+                android:background="#060E1C" />
+
+            <include layout="@layout/item_settings_action"
+                android:id="@+id/itemManageSpecies" />
+            <include layout="@layout/item_settings_action"
+                android:id="@+id/itemExportKml" />
+            <include layout="@layout/item_settings_action"
+                android:id="@+id/itemExportGpx" />
+            <include layout="@layout/item_settings_action"
+                android:id="@+id/itemImportWaypoints" />
+
+            <!-- ══ PANTALLA ══ -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="PANTALLA"
+                android:textColor="#4B5563"
+                android:textSize="10sp"
+                android:padding="10dp"
+                android:background="#060E1C" />
+
+            <include layout="@layout/item_settings_toggle"
+                android:id="@+id/itemKeepScreen" />
+            <include layout="@layout/item_settings_toggle"
+                android:id="@+id/itemMaxBrightness" />
+
+            <!-- ══ CUENTA ══ -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CUENTA"
+                android:textColor="#4B5563"
+                android:textSize="10sp"
+                android:padding="10dp"
+                android:background="#060E1C" />
+
+            <include layout="@layout/item_settings_action"
+                android:id="@+id/itemAccount" />
+
+            <include layout="@layout/item_settings_action"
+                android:id="@+id/itemLogout" />
+
+            <!-- ══ DATOS ══ -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DATOS Y ALMACENAMIENTO"
+                android:textColor="#4B5563"
+                android:textSize="10sp"
+                android:padding="10dp"
+                android:background="#060E1C" />
+
+            <include layout="@layout/item_settings_action"
+                android:id="@+id/itemDeleteAll" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sechura Navigator v1.0 · Bahía de Sechura, Piura"
+                android:textColor="#374151"
+                android:textSize="10sp"
+                android:gravity="center"
+                android:padding="16dp" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
