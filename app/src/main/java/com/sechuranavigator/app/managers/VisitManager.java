@@ -28,6 +28,7 @@ public class VisitManager {
     private boolean askProduction = true;
     // ── Dependencias ──────────────────────────────────────────────────────
     private final VisitRepository repository;
+    private final SyncManager     syncManager;
     private final Handler         mainHandler = new Handler(Looper.getMainLooper());
 
     // ── Estado ────────────────────────────────────────────────────────────
@@ -44,8 +45,6 @@ public class VisitManager {
 
     // Listener
     private VisitListener listener;
-
-    private SyncManager syncManager;
 
     public VisitManager(Context context) {
         this.repository = new VisitRepository(context);
