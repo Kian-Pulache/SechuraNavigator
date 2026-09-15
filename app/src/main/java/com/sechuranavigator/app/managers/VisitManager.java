@@ -10,6 +10,7 @@ import com.sechuranavigator.app.data.VisitRepository;
 import com.sechuranavigator.app.data.local.entities.VisitEntity;
 import com.sechuranavigator.app.data.local.entities.WaypointEntity;
 import com.sechuranavigator.app.models.GnssData;
+import com.sechuranavigator.app.managers.SyncManager;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
@@ -44,8 +45,11 @@ public class VisitManager {
     // Listener
     private VisitListener listener;
 
+    private SyncManager syncManager;
+
     public VisitManager(Context context) {
         this.repository = new VisitRepository(context);
+        this.syncManager = new SyncManager(context);
 
         // Leer configuración
         SettingsManager settings = new SettingsManager(context);
@@ -127,6 +131,10 @@ public class VisitManager {
         }
 
         repository.update(activeVisit);
+
+        if (activeWaypoint != null) {
+            syncManager.uploadVisit(activeVisit, activeWaypoint.id);
+        }
     }
 
     /**

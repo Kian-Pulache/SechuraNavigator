@@ -89,6 +89,8 @@ public class WaypointManager {
         repository.insert(entity, newId -> {
             if (newId > 0) {
                 entity.id = newId; // ← ahora sí tenemos el ID real de Room
+                entity.compositeId = buildCompositeId(newId);
+                repository.update(entity);
                 // Sincronizar con Firestore DESPUÉS de que Room asignó el ID
                 new SyncManager(context).uploadWaypoint(entity);
             }
@@ -130,6 +132,8 @@ public class WaypointManager {
         repository.insert(entity, newId -> {
             if (newId > 0) {
                 entity.id = newId;
+                entity.compositeId = buildCompositeId(newId);
+                repository.update(entity);
                 new SyncManager(context).uploadWaypoint(entity);
             }
             if (callback != null) callback.onInserted(newId);

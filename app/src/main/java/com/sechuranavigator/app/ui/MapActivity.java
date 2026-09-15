@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Point;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -21,9 +20,6 @@ import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
 import org.osmdroid.views.overlay.Marker;
-import org.osmdroid.views.overlay.Overlay;
-import org.osmdroid.views.overlay.mylocation.GpsMyLocationProvider;
-import org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay;
 
 import com.sechuranavigator.app.R;
 import com.sechuranavigator.app.data.local.entities.TrackEntity;
@@ -36,7 +32,6 @@ import com.sechuranavigator.app.managers.TrackManager;
 import com.sechuranavigator.app.managers.VisitManager;
 import com.sechuranavigator.app.managers.WaypointManager;
 import com.sechuranavigator.app.models.GnssData;
-import com.sechuranavigator.app.utils.KmlToGeoJson;
 
 import java.io.InputStream;
 import org.xmlpull.v1.XmlPullParser;
@@ -47,7 +42,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.Executors;
 
-import android.content.Intent;
 import com.sechuranavigator.app.TrackingService;
 
 public class MapActivity extends AppCompatActivity implements GnssListener {

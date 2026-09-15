@@ -210,6 +210,39 @@ public class SyncManager {
                 });
     }
 
+    public void uploadVisit(
+            com.sechuranavigator.app.data.local.entities.VisitEntity visit,
+            long waypointId) {
+        FirebaseUser user = auth.getCurrentUser();
+        if (user == null) return;
+
+        Map<String, Object> data = new HashMap<>();
+        data.put("localId",           visit.id);
+        data.put("waypointId",        waypointId);
+        data.put("arrivedAt",         visit.arrivedAt);
+        data.put("departedAt",        visit.departedAt);
+        data.put("durationMs",        visit.durationMs);
+        data.put("catchQuantity",     visit.catchQuantity);
+        data.put("catchKg",           visit.catchKg);
+        data.put("catchKgPerPerson",  visit.catchKgPerPerson);
+        data.put("numPersons",        visit.numPersons);
+        data.put("conditionTags",     visit.conditionTags);
+        data.put("distanceFromPortM", visit.distanceFromPortM);
+        data.put("catchNotes",        visit.catchNotes);
+        data.put("avgAccuracy",       visit.avgAccuracy);
+
+        db.collection("usuarios")
+                .document(user.getUid())
+                .collection("waypoints")
+                .document("wp_" + waypointId)
+                .collection("visits")
+                .document("v_" + visit.id)
+                .set(data, SetOptions.merge())
+                .addOnFailureListener(e ->
+                        ErrorLogger.logError("SyncManager.uploadVisit", e));
+    }
+
+
     // ── Utilidades ─────────────────────────────────────────────────────────
 
     private double getDouble(DocumentSnapshot doc, String field) {
